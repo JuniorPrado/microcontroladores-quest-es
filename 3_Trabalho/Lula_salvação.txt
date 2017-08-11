@@ -1,0 +1,87 @@
+sw1 ,  00
+sw2 ,  01
+bt  ,  02
+
+s   ,  03
+
+A     EQU     s0
+B     EQU     s1
+ch    EQU     s2
+
+AandB         EQU   s3
+AsomB         EQU   s4
+
+Adiv2		EQU   s5
+
+PassaA		  EQU 	s6
+
+
+Inicio:     INPUT    A, sw1
+            INPUT    B, sw2
+            INPUT    ch, bt
+
+            comp ch, $00
+            jump z, op1_and
+
+            comp ch, $01
+            jump z, op2_soma
+
+            
+	    comp ch, $02
+            jump z, op5_div
+            
+                        
+            comp ch, $03
+            jump z, op9_PassaA
+            
+            
+			
+            jump Inicio
+
+op1_and:    load s3, A
+            and AandB, B
+            OUTPUT AandB, s
+            jump Inicio
+
+op2_soma:   load AsomB, A
+            add AsomB, B
+            OUT AsomB, s
+            jump Inicio
+
+op3_sub1:   load Asub1, A
+            sub Asub1, 1
+            OUT Asub1, s
+            jump Inicio
+
+op4_xor:    load AxorB, A
+            xor AxorB, B
+            OUT AxorB, s
+            jump Inicio
+
+op5_div: 	load Adiv2, A
+			SR0 Adiv2
+			OUT Adiv2, s
+			jump Inicio
+			
+op6_Amais1: load Amais1, A
+			add Amais1, 01
+			OUT Amais1, s
+			jump Inicio
+
+op7_Amenos1: load Amenos1, A
+			sub Amenos1, 01
+			OUT Amenos1, s
+			jump Inicio
+			
+op8_Avezes2: load Avezes2, A
+			SL0 Avezes2
+			OUT Avezes2, s
+			jump Inicio
+			
+op9_PassaA: load PassaA, A
+		    OUT PassaA, s
+			jump Inicio
+
+op10_PassaB: load PassaB, B
+			 OUT PassaB, s
+			jump Inicio
