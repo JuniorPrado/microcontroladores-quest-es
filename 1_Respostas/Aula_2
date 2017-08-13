@@ -1,6 +1,6 @@
 
 1 - No barramento de dados acontece uma transmição de dados entre as unidades equanto o 
-barramento de endereços seleciona a origem ou destino.
+    barramento de endereços seleciona a origem ou destino.
 
 2 - ROM é a memória que permite apenas a leitura dos dados e não perde informação na ausência de energia; 
     RAM é a memória que permite tanto a leitura quanto a gravação de dados e perde informação quando não há alimentação elétrica. 
@@ -11,7 +11,10 @@ barramento de endereços seleciona a origem ou destino.
     (b)  Após a execução do programa ele é armazenado na memória ROM, porque após a interrupção do fornecimento de energia
     o valor obtido precisa ser mantido.
     
- 4 
+ 4 - Na arquitetura Harvard permite leitura simutanea dos dados e dos programa 
+     separadamente otimizados enquanto a anterior utiliza o mesmo espaço de memória para ambos.
+     Von Neuman: Arquitetura mais simples, mais lento pois não permite o acesso simultaneo dados, geralmente CISC.
+     Harvard: Arquitetura mais complexa, mais rápido, pois permite o acesso simultaneo dos dados, geralmente RISC, permite o pipelining.
  
  5 - Little: 
  
@@ -28,4 +31,4 @@ barramento de endereços seleciona a origem ou destino.
     0xCD - 0x0203
     
     
-6 - 
+6 - Usando registradores para auxiliar a soma.
