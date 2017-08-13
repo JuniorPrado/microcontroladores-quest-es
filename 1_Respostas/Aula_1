@@ -15,3 +15,4 @@ ASIC: São circuitos feitos especificamente para a realização de uma função;
 5 - Baixíssimo consumo elétrico (230 uA a 1MHz/2.2 V), sendo ideal para dispositivos alimentados por bateria. 
   - Arquitetura RISC de 16 bits podendo trabalhar a uma frequência interna de até 16 MHz.
   - Registradores flexíveis ao uso.
+  - Baixo custo.
