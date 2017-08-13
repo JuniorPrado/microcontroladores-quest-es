@@ -7,10 +7,8 @@ e geralmente repeti-la inúmeras vezes.
   - Eletrodomesticos: Fornos microondas, máquinas de lavar, Geladeiras Smarts;
   - Automação Industrial: Robôs Industriais.
 
-4 - FPGA:É um circuito integrado com a finalidade de ser programado p 
-Circuitos Integrados:É um circuito eletrônico formados por diversos componentes 
-eletrônicos como transistores, diodos, resistores e capacitores; 
-ASIC: São circuitos feitos especificamente para a realização de uma função;
+4 - Harvard, von Neumann arquiteturas. A Harvard permite leitura simutanea dos dados
+ enquanto VOn Neumann utiliza o mesmo espaço de memória para ambos.
 
 5 - Baixíssimo consumo elétrico (230 uA a 1MHz/2.2 V), sendo ideal para dispositivos alimentados por bateria. 
   - Arquitetura RISC de 16 bits podendo trabalhar a uma frequência interna de até 16 MHz.
