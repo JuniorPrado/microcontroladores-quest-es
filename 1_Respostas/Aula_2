@@ -1,3 +1,31 @@
 
 1 - No barramento de dados acontece uma transmição de dados entre as unidades equanto o 
-barramento de endereços seleciona a origem ou destino
+barramento de endereços seleciona a origem ou destino.
+
+2 - ROM é a memória que permite apenas a leitura dos dados e não perde informação na ausência de energia; 
+    RAM é a memória que permite tanto a leitura quanto a gravação de dados e perde informação quando não há alimentação elétrica. 
+
+3 - (a) Como a variavel i sofre alteração do seu valor durante a execução do programa e não há uma necessidade
+    de guardar seu valor após a execução do programa ela tem as caracteristicas que levam a defini-la como 
+    parte da memória RAM.
+    (b)  Após a execução do programa ele é armazenado na memória ROM, porque após a interrupção do fornecimento de energia
+    o valor obtido precisa ser mantido.
+    
+ 4 
+ 
+ 5 - Little: 
+ 
+    0xCD - 0x0200
+    0xAB - 0x0201
+    0x51 - 0x0202
+    0x80 - 0x0203
+    
+   - Big:
+    
+    0x80 - 0x0200
+    0x51 - 0x0201
+    0xAB - 0x0202
+    0xCD - 0x0203
+    
+    
+6 - 
