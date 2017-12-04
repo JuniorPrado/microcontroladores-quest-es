@@ -1,0 +1,186 @@
+1-
+#include <msp430.h>
+
+#define LED1 BIT0
+#define LED2 BIT1
+#define LEDS BIT0|BIT1
+int i;
+
+int delay(volatile int j){
+    while(j>0){
+        j --;
+    }
+}
+
+int main( void )
+{
+
+  WDTCTL = WDTPW + WDTHOLD;
+  P1OUT = 0;
+  P1DIR = LEDS;
+  while(1){
+
+      P1OUT = LEDS;
+      delay(10000);
+
+      P1OUT = 0;
+      delay(10000);
+  }
+  return 0;
+}
+
+
+2-
+#include <msp430.h>
+
+#define LED1 BIT0
+#define LED2 BIT1
+#define LEDS BIT0|BIT1
+int i;
+
+int delay(volatile int j){
+    while(j>0){
+        j --;
+    }
+}
+
+int main( void )
+{
+
+  WDTCTL = WDTPW + WDTHOLD;
+  P1OUT = 0;/
+  P1DIR = LEDS;
+  while(1){
+
+      P1OUT = LED;
+      delay(10000);
+
+      P1OUT = 0;
+      delay(5000);
+  }
+  return 0;
+}
+
+3-
+#include <msp430.h>
+
+#define LED1 BIT0
+#define LED2 BIT1
+#define LEDS BIT0|BIT1
+#define btn BIT3
+int i;
+
+int delay(volatile int j){
+    while(j>0){
+        j --;
+    }
+}
+
+int main( void )
+{
+
+  WDTCTL = WDTPW + WDTHOLD;
+
+      P1OUT |= LED1;
+      P1DIR |= LED1;
+      P1DIR &= ~btn;
+      P1REN |= btn;
+      P1OUT |= btn;
+  while(1){
+  if((P1IN&btn) == 0){
+
+      P1OUT = LED1 + btn;
+      }
+      else{
+      P1OUT &= ~LED1;
+      }
+
+  }
+  return 0;
+}
+
+
+
+4-
+
+#include <msp430.h>
+
+#define LED1 BIT0
+#define LED2 BIT1
+#define LEDS BIT0|BIT1
+#define btn BIT3
+int i;
+
+int delay(volatile int j){
+    while(j>0){
+        j --;
+    }
+}
+
+int main( void )
+{
+
+  WDTCTL = WDTPW + WDTHOLD;
+
+      P1OUT |= LED1;
+      P1DIR |= LED1;
+      P1DIR &= ~btn;
+      P1REN |= btn;
+      P1OUT |= btn;
+  while(1){
+      if((P1IN&btn) == 0){
+
+      P1OUT = LED1 + btn;
+      delay(10000);
+      P1OUT &= ~led1;
+      delay(10000);
+      }
+      else{
+      P1OUT &= ~LED;
+      }
+
+  }
+  return 0;
+}
+
+
+
+5-
+#include <msp430.h>
+#include <legacymsp430.h>
+
+#define LED1 BIT0
+#define LED2 BIT1
+#define LEDS BIT0|BIT1
+#define btn BIT3
+int i;
+
+int delay(volatile int j){
+    while(j>0){
+        j --;
+    }
+}
+
+int main( void )
+{
+
+  WDTCTL = WDTPW + WDTHOLD;
+
+      P1OUT |= LED1;
+      P1DIR |= LED1;
+      P1DIR &= ~btn;
+      P1REN |= btn;
+      P1OUT |= btn;
+      _BIS_SR(GIE + LPM4_bits);
+      return 0;
+
+      interrupt(PORT1_VECTOR) botao(void){
+      if((P1IN&btn) == 0){
+      P1OUT = LED1 + btn;
+
+      }
+      else{
+      P1OUT &= ~LED1;
+      }
+
+  }
